@@ -1,0 +1,140 @@
+.icons {
+  padding-left: 30px;
+  font-size: 50px;
+}
+
+.text {
+  font-size: 20px;
+  font-family: serif;
+}
+
+/* Estilos para las diferentes secciones de tiempo */
+.morning {
+  background-color: rgb(224, 137, 162); /* Color rosa */
+}
+
+.noon {
+  background-color: #ffea76; /* Amarillo */
+}
+
+.evening {
+  background-color: rgb(145, 221, 221); /* Turquesa */
+}
+
+.night {
+  background-color: rgb(223, 162, 227); /* Morado */
+}
+
+.only {
+  background-color: rgb(167, 237, 161); /* Verde */
+}
+
+.title {
+  font-size: 100px;
+  font-display: flex;
+  color: rgb(54, 214, 185); /* Color turquesa */
+  margin-left: 100px;
+  margin-right: 100px;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+.table-style {
+  border-collapse: separate;
+  border-spacing: 10px 0;
+  margin-bottom: 10px;
+}
+
+.column {
+  height: 50px;
+}
+
+.celda {
+  height: 50px;
+  width: 200px;
+  color: rgb(11, 11, 15);
+}
+
+.columan-fija {
+  width: 200px;
+}
+
+.color {
+  background-color: rgb(247, 243, 169); /* Amarillo claro */
+}
+
+.TomarPastilla {
+  background-color: rgb(251, 190, 85); /* Naranja */
+  border-radius: 5px;
+  border: none;
+  color: rgb(223, 212, 212);
+  margin-top: 10px;
+  height: 30px;
+}
+
+/* Estilos para la tabla scroll */
+table.scroll {
+  width: 20%;
+  border-spacing: 0;
+  border: 2px solid black;
+}
+
+table.scroll tbody,
+table.scroll thead tr {
+  display: block;
+}
+
+table.scroll tbody {
+  height: 100px;
+  overflow-y: auto;
+  overflow-x: scroll;
+}
+
+table.scroll tbody td,
+table.scroll thead th {
+  width: 140px;
+  border: 1px solid black;
+}
+
+table.scroll thead th:last-child {
+  width: 156px;
+}
+
+thead tr th {
+  height: 30px;
+  line-height: 30px;
+}
+
+tbody {
+  border-top: 2px solid black;
+}
+
+tbody td:last-child,
+thead th:last-child {
+  border-right: none !important;
+}
+/* ... Otros estilos ... */
+
+/* Estilos para las secciones */
+.morning {
+  background-color: rgb(224, 137, 162); /* Color rosa */
+}
+
+.noon {
+  background-color: #ffea76; /* Amarillo */
+}
+
+.evening {
+  background-color: rgb(145, 221, 221); /* Turquesa */
+}
+
+.night {
+  background-color: rgb(223, 162, 227); /* Morado */
+}
+
+.only {
+  background-color: rgb(167, 237, 161); /* Verde */
+}
+
+/* ... Otros estilos ... */
+
