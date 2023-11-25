@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSun, faCoffee, faMoon, faBed, faPills } from '@fortawesome/free-solid-svg-icons';
+import { faCloud, faCoffee, faMoon, faBed, faPills } from '@fortawesome/free-solid-svg-icons';
+import { WiDaySunnyOvercast } from 'react-icons/wi';
 import './tabla.css';
 
 function Tabla() {
@@ -10,10 +11,7 @@ function Tabla() {
   const [comentarios, setComentarios] = useState('');
 
   const [medicamentos, setMedicamentos] = useState([
-    {
-      tiempo: 'Morning',
-      icon: <FontAwesomeIcon icon={faSun} />,
-    },
+   
     {
       tiempo: 'Noon',
       icon: <FontAwesomeIcon icon={faCoffee} />,
@@ -115,56 +113,48 @@ function Tabla() {
     }
   };
 
- // ...
+  const getMedicamento = (categoria, index) => {
+    const recetasPorCategoria = recetas.filter(item => item.hora === categoria.tiempo);
 
-// ...
+    if (recetasPorCategoria[index] !== undefined) {
+      return (
+        <>
+          <td className={`celda border nombre_medicina ${categoria.tiempo.toLowerCase()}`}>
+            {recetasPorCategoria[index].nombre_medicina}
+          </td>
+          <td className={`celda border dosis ${categoria.tiempo.toLowerCase()}`}>{recetasPorCategoria[index].dosis}</td>
+          <td className={`celda border tiempo ${categoria.tiempo.toLowerCase()}`}>{recetasPorCategoria[index].tiempo}</td>
+          <td className={`celda border fecha ${categoria.tiempo.toLowerCase()}`}>{recetasPorCategoria[index].fecha}</td>
+          <td className={`celda border comentarios ${categoria.tiempo.toLowerCase()}`}>
+            {recetasPorCategoria[index].comentarios}
+          </td>
 
-const getMedicamento = (categoria, index) => {
-  const recetasPorCategoria = recetas.filter(item => item.hora === categoria.tiempo);
+          <button
+            className={`TomarPastilla ${categoria.tiempo.toLowerCase()}`}
+            onClick={() => tomarPastilla(recetasPorCategoria[index].id_medicamento)}
+          >
+            Tomar
+          </button>
+        </>
+      );
+    }
 
-  if (recetasPorCategoria[index] !== undefined) {
     return (
       <>
-        <td className={`celda border nombre_medicina ${categoria.tiempo.toLowerCase()}`}>
-          {recetasPorCategoria[index].nombre_medicina}
-        </td>
-        <td className={`celda border dosis ${categoria.tiempo.toLowerCase()}`}>{recetasPorCategoria[index].dosis}</td>
-        <td className={`celda border tiempo ${categoria.tiempo.toLowerCase()}`}>{recetasPorCategoria[index].tiempo}</td>
-        <td className={`celda border fecha ${categoria.tiempo.toLowerCase()}`}>{recetasPorCategoria[index].fecha}</td>
-        <td className={`celda border comentarios ${categoria.tiempo.toLowerCase()}`}>
-          {recetasPorCategoria[index].comentarios}
-        </td>
-
-        <button
-          className={`TomarPastilla ${categoria.tiempo.toLowerCase()}`}
-          onClick={() => tomarPastilla(recetasPorCategoria[index].id_medicamento)}
-        >
-          Tomar
-        </button>
+        <td className={`celda border empty ${categoria.tiempo.toLowerCase()}`}></td>
+        <td className={`celda border empty ${categoria.tiempo.toLowerCase()}`}></td>
+        <td className={`celda border empty ${categoria.tiempo.toLowerCase()}`}></td>
+        <td className={`celda border empty ${categoria.tiempo.toLowerCase()}`}></td>
+        <td className={`celda border empty ${categoria.tiempo.toLowerCase()}`}></td>
       </>
     );
-  }
+  };
 
   return (
-    <>
-      <td className={`celda border empty ${categoria.tiempo.toLowerCase()}`}></td>
-      <td className={`celda border empty ${categoria.tiempo.toLowerCase()}`}></td>
-      <td className={`celda border empty ${categoria.tiempo.toLowerCase()}`}></td>
-      <td className={`celda border empty ${categoria.tiempo.toLowerCase()}`}></td>
-      <td className={`celda border empty ${categoria.tiempo.toLowerCase()}`}></td>
-    </>
-  );
-};
-
-// ...
-
-// ...
-
-  
-
-  return (
-    <>
-      <h1 className='text-6xl text-center font-bold text-teal-500 title'>CUADRO DE MEDICAMENTOS</h1>
+    <div className="tabla-container">
+      <h1 className='text-6xl text-center font-bold text-teal-500 title'>   <button className='btn btn-primary' onClick={() => setShowModal(true)}>
+        Agregar Medicina
+      </button></h1>
 
       <button className='btn btn-primary' onClick={() => setShowModal(true)}>
         Agregar Medicina
@@ -282,8 +272,16 @@ const getMedicamento = (categoria, index) => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
 export default Tabla;
+
+
+
+
+
+
+
+

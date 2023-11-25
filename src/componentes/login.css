@@ -14,7 +14,6 @@
     font-family: 'Helvetica Neue', sans-serif; /* Fuente sans-serif elegante */
     margin-left: 20px; /* Espaciado a la izquierda */
     padding-bottom: 10px; /* Espaciado inferior */
-    color: #ff0082; /* Color rosa */
     text-shadow: 1px 1px 1px rgba(11, 9, 9, 0.5); /* Sutil sombra de texto */
     letter-spacing: 1px; /* Espaciado entre caracteres */
   }
@@ -27,13 +26,6 @@
     border: 1px solid #ced4da; /* Borde sutil para los campos de formulario */
   }
   
-  .btn-primary {
-    background-color: #ff0082; /* Fondo del botón rosa */
-    border: 1px solid #ff0082; /* Borde del botón rosa */
-  }
   
-  .btn-primary:hover {
-    background-color: #d6006c; /* Cambio de color al pasar el ratón */
-    border: 1px solid #d6006c;
-  }
+  
   

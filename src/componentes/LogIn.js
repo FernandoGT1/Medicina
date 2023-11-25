@@ -4,7 +4,7 @@ import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import './login.css';
 
-const LogIn = () => {
+const LogIn = ({ onLogin }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -13,6 +13,7 @@ const LogIn = () => {
     event.preventDefault();
 
     try {
+      // Tu lógica de autenticación existente
       const response = await fetch('http://localhost:8082/obtenerUsuarios', {
         method: 'GET',
         headers: {
@@ -35,7 +36,7 @@ const LogIn = () => {
   };
 
   const backgroundImageStyle = {
-    backgroundImage: `url("file:///C:/Users/ING%20Sergio/Documents/Tabla_villa/api_medicamento/Downloads/medicamentos/medicamentos/src/img/IMG.1.jpg")`,
+    backgroundImage: `url("https://static.vecteezy.com/system/resources/previews/010/810/331/non_2x/medicine-pharmacy-hospital-set-of-medicines-with-labels-the-concept-of-medical-subjects-illustration-in-cartoon-style-vector.jpg")`,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundAttachment: 'fixed',
@@ -45,18 +46,25 @@ const LogIn = () => {
     alignItems: 'center',
   };
 
+  const transparentCardStyle = {
+    backgroundColor: 'rgba(255, 255, 255, 0.5)',
+    borderRadius: '15px', // Ajusta según sea necesario
+    padding: '20px',
+    width: '100%',
+  };
+
   return (
     <div style={backgroundImageStyle}>
       <Container className="mt-5">
         <Row className="justify-content-center">
           <Col md={6}>
-            <Card>
-              <Card.Header className="text-center bg-primary text-white">
-                <h4>Login</h4>
+            <Card style={transparentCardStyle}>
+            <Card.Header as="h5" className="text-center">
+                Login
               </Card.Header>
               <Card.Body>
                 <Form onSubmit={handleSubmit}>
-                  <Form.Group>
+                  <Form.Group className="mb-3">
                     <Form.Label>Nombre de Usuario</Form.Label>
                     <Form.Control
                       type="text"
@@ -65,7 +73,7 @@ const LogIn = () => {
                       required
                     />
                   </Form.Group>
-                  <Form.Group>
+                  <Form.Group className="mb-3">
                     <Form.Label>Contraseña</Form.Label>
                     <Form.Control
                       type="password"
@@ -74,13 +82,15 @@ const LogIn = () => {
                       required
                     />
                   </Form.Group>
-                  <Button variant="primary" type="submit" block>
-                    Iniciar Sesión
-                  </Button>
+                  <center>
+                   <Button variant="primary" type="submit" style={{ marginRight: '10px', backgroundColor: '#007BFF', borderColor: '#007BFF' }} block>
+                     Iniciar Sesión
+                     </Button>
+                    <Link to="/registro" className="btn btn-secondary">
+                     Regístrate
+                        </Link>
+                    </center>
                 </Form>
-                <p className="text-center mt-3">
-                  ¿No tienes una cuenta? <Link to="/registro">Regístrate</Link>
-                </p>
               </Card.Body>
             </Card>
           </Col>

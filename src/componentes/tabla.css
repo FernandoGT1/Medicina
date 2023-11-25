@@ -1,16 +1,27 @@
+
+/* tabla.css */
+
+.tabla-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* O ajusta la altura según sea necesario */
+}
+
 .icons {
-  padding-left: 30px;
-  font-size: 50px;
+  padding-left: 15px; /* Reduje el espacio a la izquierda */
+  font-size: 25px; /* Reduje el tamaño de la fuente */
 }
 
 .text {
-  font-size: 20px;
+  font-size: 12px; /* Reduje el tamaño de la fuente */
   font-family: serif;
 }
 
 /* Estilos para las diferentes secciones de tiempo */
 .morning {
-  background-color: rgb(224, 137, 162); /* Color rosa */
+  background-color: rgb(224, 137, 162); /* Color rosa fuerte para la primera fila */
 }
 
 .noon {
@@ -29,47 +40,41 @@
   background-color: rgb(167, 237, 161); /* Verde */
 }
 
+/* ... */
+
 .title {
-  font-size: 100px;
+  font-size: 89px; /* Reducción del tamaño del título en un 30% */
   font-display: flex;
   color: rgb(54, 214, 185); /* Color turquesa */
-  margin-left: 100px;
-  margin-right: 100px;
+  margin-left: 35px; /* Ajusta el margen izquierdo del título según sea necesario */
+  margin-right: 35px; /* Ajusta el margen derecho del título según sea necesario */
   font-weight: 700;
-  margin-bottom: 50px;
+  margin-bottom: 24.5px; /* Ajusta el margen inferior del título según sea necesario */
 }
 
 .table-style {
   border-collapse: separate;
-  border-spacing: 10px 0;
-  margin-bottom: 10px;
+  border-spacing: 5px 0; /* Reduje el espacio entre las celdas */
+  margin-bottom: 5px; /* Reduje el espacio inferior */
 }
 
 .column {
-  height: 50px;
+  height: 30px; /* Reduje la altura de las columnas */
 }
 
 .celda {
-  height: 50px;
-  width: 200px;
+  height: 30px; /* Reduje la altura de las celdas */
+  width: 140px; /* Reduje el ancho de las celdas */
   color: rgb(11, 11, 15);
 }
 
 .columan-fija {
-  width: 200px;
-}
-
-.color {
-  background-color: rgb(247, 243, 169); /* Amarillo claro */
+  width: 140px; /* Reduje el ancho de la columna fija */
 }
 
 .TomarPastilla {
-  background-color: rgb(251, 190, 85); /* Naranja */
-  border-radius: 5px;
-  border: none;
-  color: rgb(223, 212, 212);
-  margin-top: 10px;
-  height: 30px;
+  height: 20px; /* Reduje la altura de los botones */
+  font-size: 10px; /* Reduje el tamaño de la fuente de los botones */
 }
 
 /* Estilos para la tabla scroll */
@@ -113,28 +118,27 @@ tbody td:last-child,
 thead th:last-child {
   border-right: none !important;
 }
-/* ... Otros estilos ... */
 
-/* Estilos para las secciones */
-.morning {
-  background-color: rgb(224, 137, 162); /* Color rosa */
+/* Estilos para los botones de eliminar */
+
+
+
+
+.eliminar button:hover {
+  background-color: rgb(220, 130, 145); /* Color rosa más oscuro al pasar el mouse */
 }
 
-.noon {
-  background-color: #ffea76; /* Amarillo */
+/* Resto del código sin cambios */
+
+.modal-content {
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo transparente */
+  border: 1px solid #888; /* Borde del modal */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra del modal */
 }
 
-.evening {
-  background-color: rgb(145, 221, 221); /* Turquesa */
+/* Estilos para centrar los botones en el pie del modal */
+.modal-footer {
+  display: flex;
+  justify-content: center;
 }
-
-.night {
-  background-color: rgb(223, 162, 227); /* Morado */
-}
-
-.only {
-  background-color: rgb(167, 237, 161); /* Verde */
-}
-
-/* ... Otros estilos ... */
-
